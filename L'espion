@@ -1,0 +1,82 @@
+I solved the challenge "L'espion" on cyberdefenders.org. In this article, I will share my solution to the puzzles.
+
+Challenge:
+
+You have been tasked by a client whose network was compromised and brought offline to investigate the incident and determine the attacker's identity.
+
+Incident responders and digital forensic investigators are currently on the scene and have conducted a preliminary investigation. Their findings show that the attack originated from a single user account, probably, an insider.
+
+Investigate the incident, find the insider, and uncover the attack actions.
+
+
+Solution:
+
+
+Q1. File -> Github.txt:
+What is the API key the insider added to his GitHub repositories?
+
+https://github.com/EMarseille99/Project-Build---Custom-Login-Page/blob/master/Login%20Page.js
+API Key = aJFRaLHjMXvYZgLPwiJkroYLGRkNBW
+
+Q2. File -> Github.txt:
+What is the plaintext password the insider added to his GitHub repositories?
+
+    Password: UGljYXNzb0JhZ3VldHRlOTk=
+    Password(base64)
+
+Decoded the password as "PicassoBaguette99"
+
+Q3. File -> Github.txt:
+What cryptocurrency mining tool did the insider use?
+
+Look at the repositories.
+
+xmrig
+
+Forked from xmrig/xmrig, RandomX, CryptoNight, AstroBWT and Argon2 CPU/GPU miner 
+
+Q4. What university did the insider go to?
+
+Sorbonne
+
+Google a bit about the profile and LinkedIn profile shows the Uni Name.
+
+Q5. What gaming website the insider had an account on?
+
+Steam
+
+Google a bit about with username and we can see the steam profile.
+
+Q6. What is the link to the insider Instagram profile?
+
+https://www.instagram.com/emarseille99/
+
+
+Google a bit about with username and we can see the Insta profile.
+
+Q7. Where did the insider go on the holiday? (Country only)
+
+From Instagram profile, we can see that the inside has gone Singapore for holiday.
+
+Q8. Where is the insider's family live? (City only)
+
+Dubai
+
+UAE Flag can be seen from the insta profile photo and commented as nice to meet friends and family.
+
+Q9. File -> office.jpg:
+
+You have been provided with a picture of the building in which the company has an office. Which city is the company located in?
+
+Birmingham
+
+Try to search with the sign board in the pic.
+
+Q10. File -> Webcam.png:
+
+With the intel, you have provided, our ground surveillance unit is now overlooking the person of interest's suspected address. They saw them leaving their apartment and followed them to the airport. Their plane took off and has landed in another country. Our intelligence team spotted the target with this IP camera. Which state is this camera in?
+
+Pic source is EarthCam and it was dome.
+
+Googled for the images and able to find and it was the pic of University of Notre Dame. Looked the state and it was Indiana.
+
